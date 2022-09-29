@@ -1,0 +1,28 @@
+<!--img src="{{ imageUrl }}" alt="{{ title }}"-->
+<!--img [src]="imageUrl" [alt]="title"-->
+
+<!--div class="photo-Partager-card">
+    <h2>{{ title }}</h2>
+    <p>Mis en ligne le {{ createdDate }}</p>
+    <img [src]="imageUrl" [alt]="title">
+    <p>{{ description }}</p>
+    <p>
+        <button (click)="onPartager()">{{ buttonText }}</button>
+        🤌 {{ partages }}</p>
+  </div-->
+
+  <div class="face-snap-card" [ngClass]="{ snapped: like === 'unlike!' }">
+    <h2>{{ faceSnap.title | uppercase }}</h2>
+    <p>Mis en ligne le {{ faceSnap.createdDate }}</p>
+    <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
+    <p>{{ faceSnap.description }}</p>
+    <p *ngIf="faceSnap.location">Cette photo a été prise à {{faceSnap.location}}</p>
+    <p>
+        <button (click)="onPartager()">{{ like }}</button>
+      <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.partages/10 + ', 0)' }" >  🤌 {{ faceSnap.partages }} </span>
+    </p>
+    
+    <a routerLink="/photosnaps">Back</a>
+
+  </div>
+  

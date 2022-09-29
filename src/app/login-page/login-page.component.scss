@@ -1,0 +1,19 @@
+.authentication-card{
+    width: 30%;
+    margin: 0 auto;
+}
+
+.authentication-card-container{
+    min-height: 100vh;
+}
+// @mixin background($imgpath,$position:0 0,$repeat: no-repeat) {
+//     background: {
+//         image: url($imgpath);
+//         position: $position;
+//         repeat: $repeat;
+//     }
+// }
+
+// .container {
+//     @include background('assets/téléchargement.png');
+// }
