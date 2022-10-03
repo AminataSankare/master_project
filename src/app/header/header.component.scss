@@ -1,8 +1,9 @@
 header {
-  text-align: center;
+  // text-align: center;
   background-color: #EEE;
   margin-bottom: 20px;
   padding: 10px;
+  height: 100px;
 }
 a{
 margin: 0 10px;
@@ -28,4 +29,18 @@ button {
     box-shadow: lightgray 0 0 5px;
   }
 }
+.example-spacer {
+  flex: 1 1 auto;
+}
+.right{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  float: right;
+  margin-top: -30px;
+  font-weight: 500;
+  li{
+    margin-right: 100px;
 
+  }
+}

@@ -30,15 +30,34 @@
         </mat-form-field>
         <mat-form-field>
           <mat-label>Country</mat-label>
-        <select matNativeControl name="country" id="country" formControlName="country">
+        <select matNativeControl name="country" id="country" formControlName="country" (change)="onChange($event.target.value)">
           <option value="" disabled selected>Select Country</option>
-          <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+          <option value="Afrique">Afrique</option>
+          <option value="Europe">Europe</option>
+          <option value="Amerique">Amerique</option>
+          <option value="Asie">Asie</option>
+          <option value="Australie">Australie</option>
         </select>
       </mat-form-field>
+      <div class="test" *ngIf="isAfrican">
+        <mat-label>From Senegal</mat-label>
+        <input type="checkbox" formControlName="african">
+      </div>
+      <!-- <mat-form-field *ngIf="isAfrican">
+        <mat-label>Senegal is your country ?</mat-label>
+      <mat-checkbox matNativeControl formControlName="african">
+      </mat-checkbox>
+    </mat-form-field> -->
+    <mat-label>Choose your classes</mat-label>
+      <div *ngFor="let class of classes; let i=index">
+        <input type="checkbox" formArrayName="selectedClasses" [value]="class.value" (change)="onCheckboxChange($event)" 
+        />
+        {{ class.name}}
+      </div>
       </form>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="onSubmit()">
+      <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!registerForm.valid">
         Register
       </button>
       <button mat-button routerLink="/login" routerLinkActive="active">
